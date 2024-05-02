@@ -1,0 +1,12 @@
+#visualization
+sns.set(style="whitegrid")
+plt.figure(figsize=(8, 6))
+plt.scatter(data[:, 0], data[:, 1], c=labels.ravel(), cmap='RdBu')
+plt.plot(np.arange(-2, 2), decision_line(np.arange(-2, 2)), 'k-')
+plt.scatter(data_test[0], data_test[1], color='green', marker='x', label='Test Data')
+plt.ylim(-3, 3)  # Adjust y-axis limits
+# Essential labels and title
+plt.xlabel("Feature 1")
+plt.ylabel("Feature 2")
+plt.title("Decision Boundary")
+plt.show()
